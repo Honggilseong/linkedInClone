@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import { signOut } from 'next-auth/react'
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -9,6 +10,7 @@ const Home: NextPage = () => {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <button onClick={() => signOut()}>SignOut</button>
     </div>
   )
 }
