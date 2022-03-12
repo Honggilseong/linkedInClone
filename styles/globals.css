@@ -13,3 +13,9 @@
     @apply mx-auto flex max-w-md cursor-pointer items-center justify-between rounded-lg bg-white p-4 text-black hover:shadow-xl xl:mx-0;
   }
 }
+.sidebarButton {
+  @apply cursor-pointer border-gray-600 py-3 px-4 opacity-80 hover:opacity-100  dark:border-t;
+}
+.sidebarLink {
+  @apply cursor-pointer px-2.5 text-[13px] font-medium text-blue-500 hover:underline;
+}

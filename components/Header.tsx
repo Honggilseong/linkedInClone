@@ -33,7 +33,7 @@ function Header() {
           <input
             type="text"
             placeholder="Search"
-            className="hidden flex-grow bg-transparent text-sm placeholder-black/70 focus:outline-none dark:placeholder-white/75 md:inline-flex"
+            className="hidden flex-grow bg-transparent text-sm placeholder-black/70 focus:outline-none dark:text-white dark:placeholder-white/75 md:inline-flex"
           />
         </div>
       </div>
