@@ -1,27 +1,29 @@
 import { Avatar } from '@mui/material'
 import { signOut } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import React from 'react'
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined'
 import AddRoundedIcon from '@mui/icons-material/AddRounded'
 function Sidebar() {
+  const { data: session } = useSession()
   return (
     <div className="min-w-max max-w-lg space-y-2">
       <div className="relative flex flex-col items-center overflow-hidden rounded-lg border border-gray-300 bg-white text-center dark:border-none dark:bg-[#1d2226]">
         <div className="relative h-14 w-full">
-          <Image src="https://rb.gy/i26zak" layout="fill" />
+          <Image src="https://rb.gy/i26zak" layout="fill" priority />
         </div>
         <Avatar
           onClick={() => signOut()}
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROuuuNs-fbYbTEqqhjjd7DlnF9jUJPgNzDlA&usqp=CAU"
+          src={session?.user?.image}
           className="!absolute !top-4 !h-14 !w-14 !cursor-pointer !border-2"
         />
         <div className="mt-5 space-x-0.5 py-4">
           <h4 className="cursor-pointer decoration-purple-700 underline-offset-1 hover:underline">
-            Ariana grande
+            {session?.user?.name}
           </h4>
           <p className="text-sm text-black/60 dark:text-white/75">
-            arianaGrande@gmail.com
+            {session?.user?.email}
           </p>
         </div>
         <div className="hidden text-left text-sm dark:text-white/75 md:inline">
